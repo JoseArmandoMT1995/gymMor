@@ -1,0 +1,261 @@
+* {
+    margin: 0%;
+    padding: 0%;
+    /*
+    -box-sizing -> La propiedad CSS box-sizing como el user agent debe calcular el ancho y alto total de un elemento.
+    */
+    box-sizing: border-box;
+    text-decoration: none;
+    font-family: sans-serif;
+    text-transform: uppercase;
+    
+    
+}
+
+body {
+    background: url(../img/fondo.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+}
+
+main {
+    width: 100%;
+    padding: 20px;
+    margin: auto;
+    margin-top: 100px;
+
+}
+
+.contenedor__todo {
+    width: 100%;
+    max-width: 800px;
+    margin: auto;
+    position: relative;
+}
+
+.caja__tracera {
+    width: 100%;
+    padding: 10px 20px;
+    display: flex;
+    /*junta las cajas*/
+    justify-content: center;
+    backdrop-filter: blue(10px);
+    background-color: rgba(0, 0, 0, 0.7);
+}
+
+.caja__tracera div {
+    margin: 100px 40px;
+    color: white;
+    transition: all 500ms;
+
+}
+
+.caja__tracera div p,
+.caja__tracera div button {
+    margin-top: 30px;
+    /*espaciado*/
+}
+
+.caja__tracera div h2 {
+    font-weight: 400;
+    font-size: 26px;
+}
+
+.caja__tracera button {
+    padding: 10px 40px;
+    border: 2px solid white;
+    background: transparent;
+    color: white;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    outline: none;
+    transition: all 300ms;
+    
+}
+
+.caja__tracera button:hover {
+    color: tomato;
+    background: white;
+    border: 2px solid tomato;
+}
+
+/*form*/
+.contenedor__login-register {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    max-width: 380px;
+    position: relative;
+    top: -185px;
+    left: 20px;
+    transition: left 500ms cubic-bezier(0.175, 0.885, 0.320, 1.275);
+    
+}
+
+.contenedor__login-register form {
+    width: 100%;
+    padding: 80px 20px;
+    background: white;
+    position: absolute;
+    border-radius: 20px;
+}
+
+.contenedor__login-register form h2 {
+    font-size: 30px;
+    text-align: center;
+    color: rgb(232, 44, 11);
+    margin-bottom: 30px;
+}
+
+.contenedor__login-register form input {
+    width: 100%;
+    margin-top: 20px;
+    padding: 10px;
+    border: none;
+    background: rgb(250, 178, 165);
+    color: red;
+    font-size: 16px;
+    outline: none;
+}
+
+.contenedor__login-register form .apellidos{
+    display:flex;/*elemento padre*/
+	flex-flow:row wrap;
+    justify-content:space-between;
+}
+.contenedor__login-register form .apellidos #RApp,.contenedor__login-register form .apellidos #RApm{
+    width: 45%;
+}
+
+.contenedor__login-register form button {
+    padding: 10px 40px;
+    border: none;
+    border: 2px solid tomato;
+    margin-top: 40px;
+    font-size: 14px;
+    background: tomato;
+    color: white;
+    transition: all 300ms;
+    cursor: pointer;
+    outline: none;
+}
+
+.contenedor__login-register form button:hover {
+    background: white;
+    color: tomato;
+}
+
+.formulario__login {
+    opacity: 1;
+    display: block;
+}
+
+.formulario__register {
+    display: none;
+}
+h3.tituloSecundario{
+    display: none;
+}
+
+form .botones{
+    display:flex;/*elemento padre*/
+	flex-flow:row wrap;
+    justify-content:center;
+}
+form .botones button{
+    width: 100%;
+}
+@media screen and (max-width:850px) {
+    body {
+        background: url(../img/fondo2.jpg);
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+        background-attachment: fixed;
+    }
+
+    main {
+        margin-top: 50px;
+    }
+
+    .caja__tracera {
+        max-width: 350px;
+        height: 300px;
+        flex-direction: column;
+        margin: auto;
+    }
+
+    .caja__tracera div {
+        margin: 0px;
+        position: absolute;
+    }
+
+    .contenedor__login-register {
+        top: -10px;
+        left: -5px;
+        margin: auto;
+
+    }
+
+    .contenedor__login-register form {
+        position: relative;
+    }
+    .caja__tracera-login{
+        width:300px;
+        height: auto;
+        word-wrap: break-word;
+    }
+    .caja__tracera-register{
+        width:300px;
+        height: auto;
+        word-wrap: break-word;
+    }
+    .contenedor__login-register form {
+        padding: 30px 20px;
+    }
+
+}
+@media screen and (max-width:455px) {
+    body {
+        background: url(../img/fondo1.jpg);
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+        background-attachment: fixed;
+    }
+    .caja__tracera-login{
+        width:250px;
+        height: auto;
+        word-wrap: break-word;
+    }
+    .caja__tracera-register{
+        width:250px;
+        height: auto;
+        word-wrap: break-word;
+    }
+
+
+    
+}
+@media screen and (max-width:300px)
+{
+    .caja__tracera {
+        height: 173px;
+    }
+    .contenedor__login-register form {
+        padding: 34px 20px;
+    }
+    .caja__tracera-login p, 
+    .caja__tracera-register p,
+    .caja__tracera-login h3, 
+    .caja__tracera-register h3
+    {
+        display: none;
+    }
+    h3.tituloSecundario{
+        display: block;
+    }
+}
