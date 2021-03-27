@@ -18,7 +18,6 @@ if (storageUsuarioLogin === []) {
     $("#app").val(storageUsuarioLogin.app);
     $("#apm").val(storageUsuarioLogin.apm);
 }
-
 $('#modificarUsuario').click(function () {
     nombre= $("#nombre").val();
     app= $("#app").val();
@@ -26,7 +25,6 @@ $('#modificarUsuario').click(function () {
     email= $("#email").val();
     password=storageUsuarioLogin.password
     var id= String(storageUsuarioLogin.id);
-
     editarUsuario(id, {
         nombre:nombre,
         app:app,
