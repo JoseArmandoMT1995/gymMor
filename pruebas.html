@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+<script>
+    var urlYoutube = "https://www.youtube.com/watch?v=3XR241ceMg8";
+    if (urlYoutube.indexOf("https://www.youtube.com/watch?v=") === -1) {
+        alert("ingrese url valido de youtube");
+    } else {
+        alert("url valido de youtube");
+        var videoVista = urlYoutube.indexOf("watch?v=");
+        videoVista = videoVista + 8;
+        console.log(urlYoutube.substring(videoVista));
+    }
+
+    /*
+    document.write("<br><P>The index of the first w from the beginning is " +
+       urlYoutube.indexOf("watch?v=")+"<br>")     ;
+        
+        var urlYoutube="https://www.youtube.com/watch?v=3XR241ceMg8";
+        var cadena = urlYoutube,
+        inicio = 32,
+        subCadena = cadena.substring(inicio);
+    */
+</script>
+
+</html>

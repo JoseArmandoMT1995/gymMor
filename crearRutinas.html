@@ -36,7 +36,7 @@
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Mis Rutinas</a>
+                    <a class="nav-link" href="crearRutinas.html">Mis Rutinas</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="#">Todas las Rutinas</a>
@@ -79,33 +79,38 @@
                                     <span class="input-group-text">Descripcion</span>
                                     <textarea class="form-control" aria-label="With textarea"></textarea>
                                 </div>
-                                <div class="input-group col-md-12 mt-3">
+                                <div class="input-group col-md-8 mt-3">
                                     <input type="text" class="form-control" placeholder="enlace del video de youtuve"
-                                        aria-label="Recipient's username" aria-describedby="basic-addon2" id="videoYoutuve">
+                                        aria-label="Recipient's username" aria-describedby="basic-addon2"
+                                        id="videoYoutuve">
                                     <div class="input-group-append">
-                                        <button class="btn btn-outline-secondary" type="button" data-toggle="modal" data-target="#exampleModalCenter">ver</button>
+                                        <button class="btn btn-outline-secondary" type="button">ver</button>
                                     </div>
                                 </div>
+                                    <button class="col-md-4 mt-3 btn btn-outline-secondary" type="button" data-toggle="modal"
+                                            data-target="#exampleModalCenter">Agregar Referencias</button>
+                             
+                                <div class="input-group col-md-12 mt-3">
+                                    <button type="submit" class="btn btn-primary btn-sm col-12">editar</button>
+                                </div>
+
                             </div>
                         </div>
                         <div class="col-md-6">
-                            <div class="card">
+                            <div class="card videoYoutuve">
                                 <img class="card-img-top" src="https://www.example.com/images/dinosaur.jpg"
                                     alt="Card image cap">
-                                <div class="card-body">
+                                <div class="card-body ">
                                     <img src="https://neliosoftware.com/es/wp-content/uploads/sites/3/2018/07/aziz-acharki-549137-unsplash-1200x775.jpg"
                                         alt="..." class="img-thumbnail">
                                 </div>
                             </div>
                         </div>
+
                     </div>
 
-                    <button type="submit" class="btn btn-primary btn-sm">editar</button>
                 </form>
-                <!-- Button trigger modal -->
-                <button type="button" class="btn btn-primary" >
-                    Launch demo modal
-                </button>
+
 
                 <!-- Modal -->
 
@@ -125,7 +130,6 @@
                     </button>
                 </div>
                 <div class="modal-body">
-                    
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
@@ -150,13 +154,25 @@
     <script>
         //btn-outline-secondary
         //modal-body
-        
-            
+
+
         $('.btn-outline-secondary').click(function () {
-            let link=$('#videoYoutuve').val();
-            let video=
-            '<iframe height="315" class="col-md-12" src="'+link+'"></iframe>';
-            $('.modal-body').html(video);
+        
+
+            var urlYoutube = $('#videoYoutuve').val();
+            if (urlYoutube.indexOf("https://www.youtube.com/watch?v=") === -1) {
+                alert("ingrese url valido de youtube");
+            } else {
+       
+                var videoVista = urlYoutube.indexOf("watch?v=");
+                videoVista = videoVista + 8;
+                videoVista = urlYoutube.substring(videoVista);
+                console.log("https://www.youtube.com/embed/"+videoVista);
+                let video =
+                    '<iframe height="515" class="col-md-12" src="https://www.youtube.com/embed/' + videoVista + '"></iframe>';
+                $('.modal-body').html(video);
+                $('.videoYoutuve').html(video);
+            }
         });
     </script>
 </body>
